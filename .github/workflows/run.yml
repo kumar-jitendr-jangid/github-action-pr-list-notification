@@ -13,9 +13,8 @@ jobs:
   addCommentToPr:
     runs-on: ubuntu-latest
     steps:
-      - uses: octokit/request-action@v2.x
-        id: add_pr_comment
-        with:
-          route: POST /repos/kumar-jitendr-jangid/github-action-pr-list-notification/pulls?state=open
+      - name: Get Pull Request Number
+        id: pr
+        run: echo "::set-output name=pull_request_number::$(gh pr view --json number -q .number || echo "")"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
