@@ -16,7 +16,6 @@ jobs:
       - uses: octokit/request-action@v2.x
         id: add_pr_comment
         with:
-          route: POST /repos/kumar-jitendr-jangid/:repository/pulls?state=open
-          repository: ${{ github.repository }}
+          route: POST /repos/kumar-jitendr-jangid/github-action-pr-list-notification/pulls?state=open
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
