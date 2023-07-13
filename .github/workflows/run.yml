@@ -9,12 +9,28 @@ on:
   push:
     branches:
       - main
+# jobs:
+#   addCommentToPr:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/github-script@v6
+#         id: my-script
+#         with:
+#           result-encoding: string
+#           retries: 3
+#           script: |
+#             github.rest.issues.get({
+#               issue_number: context.issue.number,
+#               owner: context.repo.owner,
+#               repo: context.repo.repo,
+#             })
+
+
 jobs:
-  addCommentToPr:
+  one:
     runs-on: ubuntu-latest
     steps:
-      - name: Get Pull Request Number
-        id: pr
-        run: echo "::setOutput name=pull_request_number::$(gh pr view --json number -q .number || echo "")"
+      - name: Dump GitHub context
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
