@@ -34,11 +34,12 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: kumar-jitendr-jangid/kumar-pull-request-count-action@v1.6
+        uses: kumar-jitendr-jangid/kumar-pull-request-count-action@v1.7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           username: 'kumar-jitendr-jangid'
           repo: 'github-action-pr-list-notification'
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
       # Use the output from the `hello` step
       # - name: Get the output time
       #   run: echo "The time was ${{ steps.hello.outputs.time }}"
