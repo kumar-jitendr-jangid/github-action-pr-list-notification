@@ -27,13 +27,17 @@ on:
 
 
 jobs:
-  one:
+  hello_world_job:
     runs-on: ubuntu-latest
+    name: A job to say hello
     steps:
-      - uses: actions/checkout@v3
+      - name: Hello world action step
+        id: hello
+        uses: kumar-jitendr-jangid/kumar-pull-request-count-action@v1.1
         with:
-          ref: 'one'
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
+          token: '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'
+          username: 'kumar-jitendr-jangid'
+          repo: 'github-action-pr-list-notification'
+      # Use the output from the `hello` step
+      # - name: Get the output time
+      #   run: echo "The time was ${{ steps.hello.outputs.time }}"
