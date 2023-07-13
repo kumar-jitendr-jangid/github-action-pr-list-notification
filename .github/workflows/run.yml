@@ -33,7 +33,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: kumar-jitendr-jangid/kumar-pull-request-count-action@v1.5
+        uses: kumar-jitendr-jangid/kumar-pull-request-count-action@v1.6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           username: 'kumar-jitendr-jangid'
