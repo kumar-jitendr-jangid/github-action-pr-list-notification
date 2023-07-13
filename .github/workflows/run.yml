@@ -35,7 +35,7 @@ jobs:
         id: hello
         uses: kumar-jitendr-jangid/kumar-pull-request-count-action@v1.5
         with:
-          token: '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'
+          token: ${{ secrets.GITHUB_TOKEN }}
           username: 'kumar-jitendr-jangid'
           repo: 'github-action-pr-list-notification'
       # Use the output from the `hello` step
