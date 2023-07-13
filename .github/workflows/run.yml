@@ -33,7 +33,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: kumar-jitendr-jangid/kumar-pull-request-count-action@v1.1
+        uses: kumar-jitendr-jangid/kumar-pull-request-count-action@v1.2
         with:
           token: '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'
           username: 'kumar-jitendr-jangid'
